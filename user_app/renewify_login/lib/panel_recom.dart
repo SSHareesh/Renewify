@@ -99,7 +99,7 @@ class _PanelRecommendationState extends State<PanelRecommendation> {
 
   Future<void> _sendRecommendationRequest(String electricityConsumption,
       String roofSpace, double latitude, double longitude) async {
-    const String url = 'https://9b43-14-195-39-82.ngrok-free.app/recommend';
+    const String url = 'http://192.168.29.45:8000/recommend';
 
     final Map<String, dynamic> requestBody = {
       'electricity_consumption': electricityConsumption,
@@ -143,11 +143,7 @@ class _PanelRecommendationState extends State<PanelRecommendation> {
     } else if (electricityConsumption == 'Less than 400 units') {
       electricityConsumptionValue = 300;
     }
-<<<<<<< HEAD
-    const String url = 'https://9b43-14-195-39-82.ngrok-free.app/predict_energy';
-=======
     const String url = 'http://192.168.23.5:5000/predict_energy';
->>>>>>> 2894a4c3b299db4a521ce84532adef8da767119f
 
     final Map<String, dynamic> requestBody = {
       'electricity_consumption': electricityConsumptionValue,
@@ -303,12 +299,8 @@ class _PanelRecommendationState extends State<PanelRecommendation> {
               ),
             ),
             const SizedBox(height: 20),
-<<<<<<< HEAD
-            if (predictedEnergyOutput != null) ...[
-=======
             // Displaying predicted energy output
             if (predictedEnergyOutput != null)
->>>>>>> 2894a4c3b299db4a521ce84532adef8da767119f
               Text(
                 'Expected Power Output: $predictedEnergyOutput kW',
                 style: TextStyle(
@@ -317,72 +309,6 @@ class _PanelRecommendationState extends State<PanelRecommendation> {
                   color: Colors.black,
                 ),
               ),
-<<<<<<< HEAD
-              const SizedBox(height: 20),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.green.shade50,
-                ),
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/images/monocrystalline.jpeg.jpg',
-                      height: 150,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      'Monocrystalline Solar Panels',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.green.shade800,
-                      ),
-                    ),
-                    const SizedBox(height: 5),
-                    const Text(
-                      'Monocrystalline solar panels excel in efficiency, leveraging single-crystal silicon to maximize energy conversion and output. Besides their premium cost, they offer superior performance in low-light conditions.',
-                      style: TextStyle(fontSize: 14, color: Colors.black87),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 20),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue.shade50,
-                ),
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/images/polycrystalline.jpeg.jpg',
-                      height: 150,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      'Polycrystalline Solar Panels',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue.shade800,
-                      ),
-                    ),
-                    const SizedBox(height: 5),
-                    const Text(
-                      'Polycrystalline solar panels boast cost-effectiveness without compromising on performance, harnessing sunlight efficiently through their mosaic-like structure. Their excellent durability and resistance to temperature variations ensure long-term reliability in diverse climates.',
-                      style: TextStyle(fontSize: 14, color: Colors.black87),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-=======
->>>>>>> 2894a4c3b299db4a521ce84532adef8da767119f
           ],
         ),
       ),

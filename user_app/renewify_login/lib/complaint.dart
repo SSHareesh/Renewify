@@ -55,7 +55,7 @@ class _ComplaintPageState extends State<ComplaintPage> {
       try {
         // Send the POST request
         final response = await http.post(
-          Uri.parse('https://9b43-14-195-39-82.ngrok-free.app/request_service'),
+          Uri.parse('http://192.168.29.45:8000/request_service'),
           headers: {
             "Content-Type": "application/json",
           },

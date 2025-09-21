@@ -317,6 +317,7 @@ class _SubsidiesPageState extends State<SubsidiesPage> {
         'logoPath': 'assets/images/union.png',
       },
       {
+        
         'title': 'SBI Solar Loan',
         'subtitle': 'Top-up loan for solar energy',
         'url': 'https://sbi.co.in/web/personal-banking/loans/pm-surya-ghar-loan-for-solar-roof-top',
@@ -631,11 +632,17 @@ class _SubsidiesPageState extends State<SubsidiesPage> {
         trailing: ElevatedButton(
           onPressed: () async {
             final Uri uri = Uri.parse(url);
-            if (await canLaunchUrl(uri)) {
-              await launchUrl(uri);
-            } else {
-              throw 'Could not launch $url';
-            }
+if (await canLaunchUrl(uri)) {
+  await launchUrl(
+    uri,
+    mode: LaunchMode.externalApplication, 
+  );
+} else {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text('Could not launch $url')),
+  );
+}
+
           },
           style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
           child: const Text('View'),
