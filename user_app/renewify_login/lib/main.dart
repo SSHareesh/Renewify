@@ -20,24 +20,23 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider<LocationProvider>(
-          create: (context) => LocationProvider(),
-        ),
-        ChangeNotifierProvider<PredictionProvider>(
-          create: (context) => PredictionProvider(),
-        ),
-<<<<<<< HEAD
+ runApp(
+  MultiProvider(
+    providers: [
+      ChangeNotifierProvider<LocationProvider>(
+        create: (context) => LocationProvider(),
+      ),
+      ChangeNotifierProvider<PredictionProvider>(
+        create: (context) => PredictionProvider(),
+      ),
+      ChangeNotifierProvider<SolarBatteryProvider>(
+        create: (context) => SolarBatteryProvider(),
+      ),
+    ],
+    child: MyApp(),
+  ),
+);
 
-        ChangeNotifierProvider(create: (_) => SolarBatteryProvider()),
-=======
->>>>>>> 2894a4c3b299db4a521ce84532adef8da767119f
-      ],
-      child: MyApp(),
-    ),
-  );
 }
 
 class MyApp extends StatefulWidget {
